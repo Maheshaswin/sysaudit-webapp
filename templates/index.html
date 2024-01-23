@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Auditing Form</title>
+    <link rel="icon" type="image/x-icon" href="/static/icon/laptop.png">
+</head>
+<body>
+    <form class="form">
+        <div class="title">CONTUS TECH<br><span>System Audit Form</span></div>
+        <div class="flexBox">
+            <input type="text" placeholder="TL Name" name="tl" class="input">
+            <input type="text" placeholder="Employee ID" name="empid" class="input">
+            <input type="text" placeholder="Name" name="name" class="input">
+            <input type="email" placeholder="Email ID" name="email" class="input">
+            <input type="text" placeholder="Designation" name="designation" class="input">
+            <input type="text" placeholder="Business Unit" name="unit" class="input">
+            <input type="text" placeholder="Device Brand" name="device" class="input">
+            <input type="text" placeholder="Model" name="model" class="input">
+            <input type="text" placeholder="Serial Number" name="sn" class="input">
+            <input type="textarea" placeholder="Describe Issue (optional)" name="Issue" class="input">
+        </div>
+        <button class="button-confirm">Submit</button>
+    </form>    
+</body>
+</html>
