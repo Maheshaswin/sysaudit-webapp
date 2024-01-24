@@ -14,16 +14,16 @@
     <form class="form" action="/verify" method="post">
         <div class="title">CONTUS TECH<br><span>Electric Equipment / Media Request Form</span></div>
         <div class="flexBox">
-            <input type="text" placeholder="TL Name" name="tl" class="input">
-            <input type="text" placeholder="Employee ID" name="empid" class="input">
-            <input type="text" placeholder="Employee Name" name="name" class="input">
-            <input type="email" placeholder="Email ID" name="email" class="input">
-            <input type="text" placeholder="Designation" name="designation" class="input">
-            <input type="text" placeholder="Business Unit" name="unit" class="input">
-            <input type="text" placeholder="Device Brand" name="device" class="input">
-            <input type="text" placeholder="Model" name="model" class="input">
-            <input type="text" placeholder="Serial Number" name="sn" class="input">
-            <input type="textarea" placeholder="Describe Issue (optional)" name="Issue" class="input">
+            <input type="text" placeholder="TL Name" name="tl" class="input" required>
+            <input type="numeric" placeholder="Employee ID" name="empid" class="input" required maxlength="4">
+            <input type="text" placeholder="Employee Name" name="name" class="input" required>
+            <input type="email" placeholder="Email ID" name="email" class="input" required>
+            <input type="text" placeholder="Designation" name="designation" class="input" required>
+            <input type="text" placeholder="Business Unit" name="unit" class="input" required>
+            <input type="text" placeholder="Device Brand" name="device" class="input" required>
+            <input type="text" placeholder="Model" name="model" class="input" required>
+            <input type="text" placeholder="Serial Number" name="sn" class="input" required>
+            <input type="textarea" placeholder="Describe Issue (optional)" name="Issue" class="input" minlength="5" maxlength="50">
         </div>
         <p>NOTE: Before submit the form kindly read the <a target="_blank" href="/policy">LAPTOP POLICY</a> for your reference.</p>
         <button class="button-confirm">Submit</button>

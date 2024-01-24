@@ -10,7 +10,7 @@
 <body>
     <form class="form-verify" action="/validate" method="post">
         <p>OTP has been sent to your email id, check and confirm.</p>
-        <span>Enter OTP:</span> <input type="text" name="otp" class="otp">
+        <text>Enter OTP:</text> <input required type="number" name="otp" class="otp" maxlength="6">
         <input type="submit" value="Submit" class="button-confirm-verify">
     </form>
 </body>
