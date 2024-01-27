@@ -26,6 +26,17 @@
             <input type="text" placeholder="Serial Number" name="sn" class="input" required autocomplete="off">
             <input type="textarea" placeholder="Describe Issue (optional)" name="issue" class="input" minlength="5" maxlength="50" autocomplete="off">
         </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        {% endwith %}
         <p>NOTE: Before submit the form kindly read the <a target="_blank" href="/policy">LAPTOP POLICY</a> for your reference.</p>
         <button type="submit" class="button-confirm">Submit</button>
     </form>    
