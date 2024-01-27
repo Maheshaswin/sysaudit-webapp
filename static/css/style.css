@@ -6,6 +6,7 @@ body{
   width: 180px;
   height: 75px;
 }
+
 .form {
   --input-focus: #2d8cf0;
   --font-color: #323232;
@@ -201,4 +202,17 @@ text{
   padding: 5px 10px;
   outline: none;
   margin-bottom: 20px;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
 }

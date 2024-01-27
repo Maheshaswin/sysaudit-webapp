@@ -103,26 +103,28 @@ def policy():
 # Otp Verfication
 @app.route('/verify')  
 def verify():  
-    return render_template('verify.html')  
+    return render_template('verify.html')
 
-# Otp Validation
-@app.route('/validate',methods=["POST"])   
-def validate():  
-    
+@app.route('/validate', methods=["POST"])
+def validate():
     # Actual Otp which was sent to the receiver
-    current_user_otp = session['current_otp']
-    print("Current User OTP",current_user_otp)
-    
+    current_user_otp = session.get('current_otp')
+    print("Current User OTP", current_user_otp)
+
     # Otp Entered by the User
-    user_otp = request.form['otp'] 
+    user_otp = request.form.get('otp')
     print("User OTP : ", user_otp)
-    
-    # Otp cheking and redirection 
-    if int(current_user_otp) == int(user_otp):  
-        return "<h3> Your email has been successfully verified! </h3>"  
+
+    # Otp checking and redirection
+    if current_user_otp and user_otp and int(current_user_otp) == int(user_otp):
+        # Clear the current_otp from the session
+        session.pop('current_otp', None)
+        # Clear the sesstion
+        session.clear()
+        return '<h3>Successfully Verfied</h3>'
     else:
-        flash("Kindly enter the correct otp redirecting.....")  
-        return redirect(url_for('verify'))      
+        flash("Invalid OTP")
+        return redirect(url_for('verify'))   
 
 # Start the server
 if __name__=="__main__":

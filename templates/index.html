@@ -10,12 +10,10 @@
     <title>Auditing Form</title>
     <link rel="icon" type="image/x-icon" href="/static/icon/laptop.png">
 </head>
-<body>
     <form class="form" method="post">
         <div class="form-header">
-            <img class="logo" src="/static/Images/contus_logo.png" alt="">
-        </div>
-        
+            <img class="logo" src="/static/Images/contus_logo.png" alt="Contus Logo">
+        </div>    
         <div class="flexBox">
             <input type="text" placeholder="TL Name" name="tl" class="input" required autocomplete="off">
             <input type="number" onkeypress="maxiLength(event, this.value, 4)" placeholder="Employee ID" id="empid" name="empid" maxlength="4" class="input" required autocomplete="off">
@@ -32,6 +30,7 @@
         <button type="submit" class="button-confirm">Submit</button>
     </form>    
 </body>
+
 <script type="text/javascript">
     function maxiLength(event, value, maxLength){
         if (value != undefined && value.toString().length >= maxLength) {
