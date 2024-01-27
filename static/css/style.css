@@ -2,6 +2,10 @@ body{
     background-color: #ebebeb;
 }
 
+.form-header img.logo {
+  width: 180px;
+  height: 75px;
+}
 .form {
   --input-focus: #2d8cf0;
   --font-color: #323232;
@@ -34,7 +38,7 @@ body{
   font-size: 20px;
 }
 
-.title span {
+span {
   color: var(--font-color-sub);
   font-weight: 600;
   font-size: 17px;

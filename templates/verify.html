@@ -10,8 +10,16 @@
 <body>
     <form class="form-verify" action="/validate" method="post">
         <p>OTP has been sent to your email id, check and confirm.</p>
-        <text>Enter OTP:</text> <input required type="number" name="otp" class="otp" maxlength="6">
+        <text>Enter OTP:</text> <input required type="number" onkeypress="maxiLength(event, this.value, 6)" name="otp" class="otp" maxlength="6">
         <input type="submit" value="Submit" class="button-confirm-verify">
     </form>
 </body>
+<script type="text/javascript">
+    function maxiLength(event, value, maxLength){
+        if (value != undefined && value.toString().length >= maxLength) {
+            event.preventDefault();
+        }
+    }
+</script>
+</script>
 </html>

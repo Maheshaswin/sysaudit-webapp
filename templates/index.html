@@ -11,22 +11,32 @@
     <link rel="icon" type="image/x-icon" href="/static/icon/laptop.png">
 </head>
 <body>
-    <form class="form" action="/verify" method="post">
-        <div class="title">CONTUS TECH<br><span>Electric Equipment / Media Request Form</span></div>
+    <form class="form" method="post">
+        <div class="form-header">
+            <img class="logo" src="/static/Images/contus_logo.png" alt="">
+        </div>
+        
         <div class="flexBox">
-            <input type="text" placeholder="TL Name" name="tl" class="input" required>
-            <input type="numeric" placeholder="Employee ID" name="empid" class="input" required maxlength="4">
-            <input type="text" placeholder="Employee Name" name="name" class="input" required>
-            <input type="email" placeholder="Email ID" name="email" class="input" required>
-            <input type="text" placeholder="Designation" name="designation" class="input" required>
-            <input type="text" placeholder="Business Unit" name="unit" class="input" required>
-            <input type="text" placeholder="Device Brand" name="device" class="input" required>
-            <input type="text" placeholder="Model" name="model" class="input" required>
-            <input type="text" placeholder="Serial Number" name="sn" class="input" required>
-            <input type="textarea" placeholder="Describe Issue (optional)" name="Issue" class="input" minlength="5" maxlength="50">
+            <input type="text" placeholder="TL Name" name="tl" class="input" required autocomplete="off">
+            <input type="number" onkeypress="maxiLength(event, this.value, 4)" placeholder="Employee ID" id="empid" name="empid" maxlength="4" class="input" required autocomplete="off">
+            <input type="text" placeholder="Employee Name" name="name" class="input" required autocomplete="off">
+            <input type="email" placeholder="Email ID" name="email" class="input" required autocomplete="off">
+            <input type="text" placeholder="Designation" name="designation" class="input" required autocomplete="off">
+            <input type="text" placeholder="Business Unit" name="bunit" class="input" required autocomplete="off">
+            <input type="text" placeholder="Device Brand" name="device" class="input" required autocomplete="off">
+            <input type="text" placeholder="Model" name="model" class="input" required autocomplete="off">
+            <input type="text" placeholder="Serial Number" name="sn" class="input" required autocomplete="off">
+            <input type="textarea" placeholder="Describe Issue (optional)" name="issue" class="input" minlength="5" maxlength="50" autocomplete="off">
         </div>
         <p>NOTE: Before submit the form kindly read the <a target="_blank" href="/policy">LAPTOP POLICY</a> for your reference.</p>
-        <button class="button-confirm">Submit</button>
+        <button type="submit" class="button-confirm">Submit</button>
     </form>    
 </body>
+<script type="text/javascript">
+    function maxiLength(event, value, maxLength){
+        if (value != undefined && value.toString().length >= maxLength) {
+            event.preventDefault();
+        }
+    }
+</script>
 </html>
