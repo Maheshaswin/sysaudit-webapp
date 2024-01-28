@@ -126,9 +126,9 @@ def verify():
 @app.route('/validate', methods=["POST"])
 def validate():
     current_user_otp = session.get('current_otp')
-    print(current_user_otp)
+    #print(current_user_otp)
     user_otp = request.form.get('otp')
-    print(user_otp)
+    #print(user_otp)
 
     if current_user_otp and user_otp and int(current_user_otp) == int(user_otp):
         
