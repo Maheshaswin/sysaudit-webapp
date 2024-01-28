@@ -7,8 +7,8 @@ app = Flask(__name__)
 app.secret_key = 'EmailAuthenticationByMahesh2024'
 
 # MongoDB connection details
-mongo_url = "mongodb://localhost:27017/"
-#mongo_url = "mongodb://mongo:27017/" # Connecting to docker mongodb
+#mongo_url = "mongodb://localhost:27017/"
+mongo_url = "mongodb://mongo:27017/" # Connecting to docker mongodb
 db_name = "user_db"
 
 # Function to connect to MongoDB
