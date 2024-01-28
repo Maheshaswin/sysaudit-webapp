@@ -157,7 +157,7 @@ p{
 }
 
 .otp{
-  width: 75px;
+  width: 86px;
   height: 17px;
   border-radius: 5px;
   border: 2px solid var(--main-color);
@@ -215,4 +215,16 @@ text{
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+}
+
+.field{
+  height: 20px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 5px 10px;
+  outline: none;
+  margin-bottom: 20px;
 }

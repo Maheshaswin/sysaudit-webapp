@@ -9,20 +9,21 @@
 
 <body>
     <form class="form-verify" action="/validate" method="post">
-        <p>OTP has been sent to your email id, check and confirm.</p>
+        <p>OTP has been sent to your email id, Kindly check and confirm.</p>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-danger">
-                        {{ message }}
-                    </div>
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <label for="otp">Enter OTP:</label>
+        <label for="otp" class="field">Enter OTP:</label>
         <input required type="number" onkeypress="maxiLength(event, this.value, 6)" name="otp" class="otp" maxlength="6">
         <input type="submit" value="Submit" class="button-confirm-verify">
     </form>
+
     <script type="text/javascript">
         function maxiLength(event, value, maxLength) {
             if (value != undefined && value.toString().length >= maxLength) {

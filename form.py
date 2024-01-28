@@ -1,13 +1,14 @@
 from flask import *
 from email_otp import *
 from pymongo import MongoClient
+import time
 
 app = Flask(__name__)
 app.secret_key = 'EmailAuthenticationByMahesh2024'
 
 # MongoDB connection details
-#mongo_url = "mongodb://localhost:27017/"
-mongo_url = "mongodb://mongo:27017/" # Connecting to docker mongodb
+mongo_url = "mongodb://localhost:27017/"
+#mongo_url = "mongodb://mongo:27017/" # Connecting to docker mongodb
 db_name = "user_db"
 
 # Function to connect to MongoDB
@@ -121,15 +122,27 @@ def verify():
 @app.route('/validate', methods=["POST"])
 def validate():
     current_user_otp = session.get('current_otp')
+    print(current_user_otp)
     user_otp = request.form.get('otp')
+    print(user_otp)
 
     if current_user_otp and user_otp and int(current_user_otp) == int(user_otp):
+        
+        # Clear the current_otp from the session
         session.pop('current_otp', None)
+        
+        # Clear the entire session history
         session.clear()
-        return '<h3>Successfully Verified</h3>'
+
+        return redirect(url_for('sysaudit_form'))
     else:
+        # Flash an error message
+        #print("Flashing error message")
         flash("Invalid OTP")
+
+        # Redirect to the verification page
         return redirect(url_for('verify'))
+    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
