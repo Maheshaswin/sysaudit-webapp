@@ -113,6 +113,10 @@ def sysaudit_form():
 
     return render_template('index.html')
 
+@app.route('/policy')
+def policy():
+    return render_template('policy.html')
+
 # Otp Verification Route
 @app.route('/verify')
 def verify():
