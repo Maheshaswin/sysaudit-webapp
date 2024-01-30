@@ -228,3 +228,11 @@ text{
   outline: none;
   margin-bottom: 20px;
 }
+
+.verified{
+  margin: 0 auto;
+}
+
+.gif{
+  width: 300px;
+}

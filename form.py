@@ -122,6 +122,11 @@ def policy():
 def verify():
     return render_template('verify.html')
 
+# Verified Route
+@app.route('/verified')
+def verified():
+    return render_template('verified.html')
+
 # Validate Otp Route
 @app.route('/validate', methods=["POST"])
 def validate():
@@ -138,7 +143,7 @@ def validate():
         # Clear the entire session history
         session.clear()
 
-        return redirect(url_for('sysaudit_form'))
+        return redirect(url_for('verified'))
     else:
         # Flash an error message
         #print("Flashing error message")
@@ -147,6 +152,9 @@ def validate():
         # Redirect to the verification page
         return redirect(url_for('verify'))
     
+@app.route('/retmain', methods=["GET"])
+def retmain():
+    return redirect(url_for('sysaudit_form'))    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
