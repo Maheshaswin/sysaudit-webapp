@@ -93,6 +93,10 @@ span {
   border: 1px solid #fbfbfb;
 }
 
+#submitButton:disabled {
+  pointer-events: none;
+}
+
 .policy{
   --input-focus: #2d8cf0;
   --font-color: #323232;
