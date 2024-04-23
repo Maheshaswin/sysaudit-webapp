@@ -1,0 +1,10 @@
+FROM mongo:4.4
+
+# Expose the MongoDB port
+EXPOSE 27017
+
+# Set default data directory
+VOLUME /data/db
+
+# Start MongoDB
+CMD ["mongod"]
