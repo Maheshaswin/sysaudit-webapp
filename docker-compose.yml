@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: flask-frontend
     ports:
       - "8000:8000"
     environment:
@@ -15,7 +16,10 @@ services:
       - flask-network
 
   mongo:
-    image: mongo:4.4
+    build:
+      context: .
+      dockerfile: Dockerfile-mongo
+    container_name: flask-mongo
     ports:
       - "27017:27017"
     volumes:
