@@ -11,6 +11,8 @@ services:
       FLASK_ENV: production
     depends_on:
       - mongo
+    networks:
+      - flask-network
 
   mongo:
     image: mongo:4.4
@@ -18,6 +20,12 @@ services:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
+    networks:
+      - flask-network
 
 volumes:
   mongodb_data:
+
+networks:
+  flask-network:
+    driver: bridge
